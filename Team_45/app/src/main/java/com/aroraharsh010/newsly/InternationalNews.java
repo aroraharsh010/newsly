@@ -7,6 +7,7 @@ import android.content.Intent;
 import android.os.AsyncTask;
 import android.os.Handler;
 import android.support.v4.view.MenuItemCompat;
+import android.support.v4.widget.SwipeRefreshLayout;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.SearchView;
@@ -29,7 +30,7 @@ import java.util.ArrayList;
 import java.util.HashMap;
 
 public class InternationalNews extends AppCompatActivity {
-    String API_KEY = "8190df9eb51445228e397e4185311a66";
+    String API_KEY = "5a7fdf59439d4d1fb3c7b5583c46776e";
     public static String NEWS_SOURCE = "bbc-news";//Any news source would do
     ListView listNews;
     ProgressBar loader;
@@ -43,7 +44,7 @@ public class InternationalNews extends AppCompatActivity {
     FirebaseAuth mAuth;
     Menu mMenu;
     boolean doubleBackToExitPressedOnce=false;
-
+    SwipeRefreshLayout mySwipeRefreshLayout;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

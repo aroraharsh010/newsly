@@ -6,6 +6,7 @@ import android.content.Context;
 import android.content.Intent;
 import android.os.Handler;
 import android.support.v4.view.MenuItemCompat;
+import android.support.v4.widget.SwipeRefreshLayout;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.SearchView;
@@ -36,7 +37,7 @@ import java.util.HashMap;
 import com.google.firebase.auth.FirebaseAuth;
 
 public class HomeScreen extends AppCompatActivity {
-    String API_KEY = "8190df9eb51445228e397e4185311a66";
+    String API_KEY = "5a7fdf59439d4d1fb3c7b5583c46776e";
     public static String NEWS_SOURCE = "the-times-of-india";//Any news source would do
     ListView listNews;
     ProgressBar loader;
@@ -47,8 +48,8 @@ public class HomeScreen extends AppCompatActivity {
     public static final String KEY_URL = "url";
     public static final String KEY_URLTOIMAGE = "urlToImage";
     public static final String KEY_PUBLISHEDAT = "publishedAt";
-    Menu mMenu;
     boolean doubleBackToExitPressedOnce = false;
+    SwipeRefreshLayout mySwipeRefreshLayout;
 
     FirebaseAuth mAuth;
     @Override
@@ -67,8 +68,6 @@ public class HomeScreen extends AppCompatActivity {
     public boolean onCreateOptionsMenu(Menu menu) {
         MenuInflater inflater = getMenuInflater();
         inflater.inflate(R.menu.toolbar_menu, menu);
-
-
         SearchView search = (SearchView) MenuItemCompat.getActionView(menu.findItem(R.id.action_search));
         // Associate searchable configuration with the SearchView
         SearchManager searchManager = (SearchManager) getSystemService(Context.SEARCH_SERVICE);
@@ -115,7 +114,7 @@ public class HomeScreen extends AppCompatActivity {
             String xml = "";
 
             String urlParameters = "";
-            xml = Function.excuteGet("https://newsapi.org/v1/articles?source="+NEWS_SOURCE+"&sortBy=top&apiKey="+API_KEY, urlParameters);
+            xml = Function.excuteGet("https://newsapi.org/v2/top-headlines?country=in&apiKey="+API_KEY, urlParameters);
             return  xml;
         }
         @Override

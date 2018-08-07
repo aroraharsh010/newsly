@@ -25,7 +25,7 @@ import java.util.ArrayList;
 import java.util.HashMap;
 
 public class SearchResultsActivity extends AppCompatActivity {
-    String API_KEY = "8190df9eb51445228e397e4185311a66";
+    String API_KEY = "5a7fdf59439d4d1fb3c7b5583c46776e";
     ListView listNews;
     ProgressBar loader;
     ArrayList<HashMap<String, String>> dataList = new ArrayList<HashMap<String, String>>();

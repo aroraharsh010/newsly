@@ -4,7 +4,6 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     tools:context=".activity.MainActivity">
-
     <item
         android:id="@+id/action_search"
         android:icon="@android:drawable/ic_menu_search"
@@ -26,6 +25,5 @@
         android:id="@+id/action_sign_out"
         android:title="Sign Out"
         app:showAsAction="never"/>
-
 
 </menu>
